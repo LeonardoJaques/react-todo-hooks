@@ -15,9 +15,7 @@ import { DispatchContext } from './context/todo.context';
 function Todo({ id, task, completed }) {
   const dispatch = useContext(DispatchContext);
   const [isEditing, toggle] = useToggleState(false);
-  console.log('TODO RE-REDENDER:', task);
-
-  return (
+    return (
     <ListItem style={{ height: '60px' }}>
       {isEditing ? (
         <EditTodoForm id={id} task={task} toggleEditForm={toggle} />
