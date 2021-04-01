@@ -4,7 +4,7 @@ import Todo from './Todo';
 import { TodosContext } from './context/todo.context';
 
 function TodoList() {
-  const { todos } = useContext(TodosContext);
+  const todos = useContext(TodosContext);
   if (todos.length) {
     return (
       <Paper>
