@@ -1,5 +1,6 @@
-import { createContext } from 'react';
-import useTodoState from '../hooks/useTodoState';
+import { createContext, useReducer } from 'react';
+import reducer from '../reducers/todo.reducer';
+
 //todos
 // all methos interact with todos
 const defaultTodos = [
@@ -10,9 +11,9 @@ const defaultTodos = [
 const TodosContext = createContext();
 
 function TodoProvider(props) {
-  const todoActions = useTodoState(defaultTodos);
+  const [todos, dispatch] = useReducer(reducer, defaultTodos);
   return (
-    <TodosContext.Provider value={todoActions}>
+    <TodosContext.Provider value={{ todos, dispatch }}>
       {props.children}
     </TodosContext.Provider>
   );
