@@ -13,7 +13,7 @@ import EditTodoForm from './EditTodoForm';
 import { TodosContext } from './context/todo.context';
 
 function Todo({ id, task, completed }) {
-  const { toggleTodo, removeTodo } = useContext(TodosContext);
+  const {toggleTodo, removeTodo } = useContext(TodosContext);
   const [isEditing, toggle] = useToggleState(false);
 
   return (
